@@ -1,0 +1,89 @@
+//SANI: Step 1: Create table
+CREATE TABLE tbl_role (
+    rol_id int IDENTITY(1,1) NOT NULL,    
+    role_name varchar(255)
+    
+);
+
+////////////////////////////////////////////
+
+//SANI: Step 2: Create stored procedure for insertion
+Create procedure spAddRole     
+
+(    
+
+    @Name VARCHAR(20)
+
+)    
+
+as     
+
+Begin     
+
+    Insert into tbl_role (rol_name)     
+
+    Values (@Name)     
+
+End
+
+///////////////////////////////////////////////////////////
+
+//SANI: Step 3: Create stored procedure for updation
+
+Create procedure spUpdateRole      
+
+(      
+
+   @rolid INTEGER ,    
+   @Name VARCHAR(20) 
+
+)      
+
+as      
+
+begin      
+
+   Update tbl_role       
+
+   set rol_name=@Name      
+where rol_id=@rolid      
+
+End
+
+//////////////////////////////////////////////////////////
+
+//SANI: Step 4: Create stored procedure for deletion
+
+Create procedure spDeleteRole     
+
+(      
+
+   @RoleId int      
+
+)      
+
+as       
+
+begin      
+
+   Delete from tbl_role where rol_id=@RoleId      
+
+End
+
+///////////////////////////////////////////////////////////
+
+//SANI: Step 5: Create stored procedure for listing
+
+Create procedure spGetAllRole    
+
+as    
+
+Begin    
+
+    select * from tbl_role    
+
+End
+
+///////////////////////////////////////////////////////////////
+
+

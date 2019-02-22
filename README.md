@@ -1,4 +1,4 @@
-DotNet
+Asp.Net
 ======
 
-VB.Net Development for website and desktop applications
+Development for website and desktop applications
